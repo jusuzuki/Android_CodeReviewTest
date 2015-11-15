@@ -2,6 +2,7 @@ package com.jusuzuki.codereview;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public static final int PICK_PHOTO_REQUEST = 2;
-
     protected Uri mMediaUri;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

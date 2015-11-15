@@ -12,6 +12,10 @@
         android:name="com.jusuzuki.codereview.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.jusuzuki.codereview.permission.C2D_MESSAGE" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+
 
     <application
         android:name=".CodeReviewApplication"

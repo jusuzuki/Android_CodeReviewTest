@@ -36,6 +36,8 @@
         android:layout_height="wrap_content"
         android:text="Upload Photo"
         android:id="@+id/uploadPhotoButton"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_above="@+id/gotoLoginButton"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
