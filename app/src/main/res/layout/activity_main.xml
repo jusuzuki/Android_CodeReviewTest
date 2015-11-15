@@ -39,5 +39,13 @@
         android:layout_above="@+id/gotoLoginButton"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take Photo"
+        android:id="@+id/takePhotoButton"
+        android:layout_above="@+id/uploadPhotoButton"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>

@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.gotoLoginButton) Button gotoLoginButton;
     @Bind(R.id.logoutButton) Button logoutButton;
     @Bind(R.id.uploadPhotoButton) Button uploadPhotoButton;
+    @Bind(R.id.takePhotoButton) Button takePhotoButton;
 
-
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     public static final int PICK_PHOTO_REQUEST = 2;
     protected Uri mMediaUri;
 
@@ -83,6 +84,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
             }
         });
+
+        takePhotoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
+            }
+        });
+
     }
 
     @Override
