@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.ParseACL;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.logoutButton) Button logoutButton;
     @Bind(R.id.uploadPhotoButton) Button uploadPhotoButton;
     @Bind(R.id.takePhotoButton) Button takePhotoButton;
+    @Bind(R.id.usernameDisplay) TextView usernameDisplay;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     public static final int PICK_PHOTO_REQUEST = 2;
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null){
             logoutButton.setVisibility(View.VISIBLE);
+            usernameDisplay.setText(currentUser.getUsername().toString());
+        } else {
+            usernameDisplay.setVisibility(View.INVISIBLE);
         }
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ParseUser.logOut();
                 Toast.makeText(getApplicationContext(), "You have been logged out", Toast.LENGTH_SHORT).show();
+                usernameDisplay.setVisibility(View.INVISIBLE);
                 logoutButton.setVisibility(View.INVISIBLE);
             }
         });
@@ -98,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected  void onActivityResult(int requestCode, int resultCode, Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode, data);
 
         if (resultCode == RESULT_OK){
