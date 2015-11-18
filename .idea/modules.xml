@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CodeReview.iml" filepath="$PROJECT_DIR$/CodeReview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android_CodeReviewTest.iml" filepath="$PROJECT_DIR$/Android_CodeReviewTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

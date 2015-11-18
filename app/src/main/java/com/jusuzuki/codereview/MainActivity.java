@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null){
             logoutButton.setVisibility(View.VISIBLE);
-            usernameDisplay.setText(currentUser.getUsername().toString());
+            usernameDisplay.setText("Welcome " + currentUser.getUsername().toString());
         } else {
             usernameDisplay.setVisibility(View.INVISIBLE);
         }
